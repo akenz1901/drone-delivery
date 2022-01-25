@@ -42,7 +42,7 @@ class DroneServiceImplTest {
 
         assertThat(drone).isNotNull();
         log.info("Before Registering Drone");
-        droneServiceImpl.registerDrone(drone);
+//        droneServiceImpl.registerDrone(drone);
         log.info("After Registering Drone");
 //        assertThat(droneRepository.findById(2L)).isNotNull();
 
@@ -92,8 +92,8 @@ class DroneServiceImplTest {
         droneDto.setState(Status.IDLE);
 //        droneDto.setWeight(400);
 
-        droneServiceImpl.updateDroneStatus(26L, droneDto);
-        droneServiceImpl.updateDroneStatus(41L, droneDto);
+        droneServiceImpl.updateDroneStatus(36L, droneDto);
+        droneServiceImpl.updateDroneStatus(60L, droneDto);
         droneServiceImpl.updateDroneStatus(44L, droneDto);
     }
 }

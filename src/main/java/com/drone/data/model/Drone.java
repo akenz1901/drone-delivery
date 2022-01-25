@@ -1,9 +1,9 @@
 package com.drone.data.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 
 @Data
@@ -23,6 +23,7 @@ public class Drone {
     private Integer battery_percentage;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Status state;
 
     @OneToOne(fetch = FetchType.LAZY, orphanRemoval = true)
