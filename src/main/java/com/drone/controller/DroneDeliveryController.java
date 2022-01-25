@@ -30,7 +30,13 @@ public class DroneDeliveryController {
     @Autowired
     MedicationService medicationServiceImpl;
 
-    @PostMapping("/")
+    @GetMapping("/all")
+    public List<Drone> allDrones(){
+
+        return droneServiceImpl.findAllDrone();
+    }
+
+    @PostMapping("/register")
     public ResponseEntity<?> registerDrone(@RequestBody Drone drone) throws WeightTooLargeException {
 
         return ResponseEntity.ok()
